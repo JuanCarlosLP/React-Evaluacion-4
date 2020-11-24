@@ -1,3 +1,56 @@
-.App {
+#root{
+  display: flex;
+  justify-content: center;
+}
+
+.pokedex-container{
+ display: grid;
+ grid-template-columns: 1fr 1fr 1fr;
+ column-gap: 2%;
+ row-gap: 2%;
+}
+
+.card-container{
+  padding: 0em 1em;
+  border-radius: 4px;
+  border: solid 1px #000;
+}
+
+.card-container img{
+  display: block;
+  width: 100%;
+}
+
+.card-container h3{
+  float: left;
+}
+
+.card-container h5{
+  float: left;
+  width: 22%;
+}
+.container-paginacion{
+  display: flex;
+}
+
+.pagination-row{
+  display: flex;
+  justify-content: space-between;
+}
+
+.container-paginacion > .item{
+  width: 20px;
   text-align: center;
+  background-color: #82b0ec;
+  cursor: pointer;
+  margin-bottom: 10px;
+}
+
+.pagination-row > .item:hover{
+  background-color: #c2c2c2;
+  margin-bottom: 10px;
+}
+
+.container-top {
+padding: 5px;
 }
