@@ -33,10 +33,6 @@ class PokemonDetail extends React.Component{
                      <Badge variant="primary"><h6>{types.type.name}</h6></Badge> 
                     )}
                 </div>
-                
-                <div className="img-details">
-                    <img src={this.props.img} alt={this.props.name} />
-                </div>
 
                 <Table striped bordered hover variant="dark">
                     <tbody>
