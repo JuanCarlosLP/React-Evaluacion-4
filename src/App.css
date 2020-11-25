@@ -30,6 +30,11 @@
   width: 100%;
 }
 
+.img-details{
+  margin-left: 30%;
+  width: 40%;
+}
+
 .card-container h3{
   float: left;
 }
