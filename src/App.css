@@ -10,6 +10,15 @@
  row-gap: 2%;
 }
 
+.modal-header{
+  font-size: 2rem;
+  justify-content: center;
+}
+
+.modal-body{
+  padding-top: 0;
+}
+
 .card-container{
   padding: 0em 1em;
   border-radius: 4px;

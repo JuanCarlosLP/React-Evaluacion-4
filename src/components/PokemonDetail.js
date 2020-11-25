@@ -28,11 +28,11 @@ class PokemonDetail extends React.Component{
             <div className="card-container">
                 <img src={this.props.img} alt={this.props.name} />
 
-                {this.state.data.map(types =>
-                    <div>
-                        <Badge variant="primary">{types.type.name}</Badge>{' '}
-                    </div>
-                )}
+                <div>
+                    {this.state.data.map(types =>
+                        <Badge variant="primary">{types.type.name}</Badge>
+                    )}
+                </div>
 
                 <Table striped bordered hover variant="dark">
                     <tbody>
