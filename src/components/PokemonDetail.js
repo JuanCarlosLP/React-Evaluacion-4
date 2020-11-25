@@ -25,12 +25,12 @@ class PokemonDetail extends React.Component{
     
     render() {
         return (
-            <div className="card-container">
+            <div className="card-container-detalles">
                 <img src={this.props.img} alt={this.props.name} />
 
-                <div>
+                <div className="row justify-content-around mb-2">
                     {this.state.data.map(types =>
-                        <Badge variant="primary">{types.type.name}</Badge>
+                     <Badge variant="primary"><h6>{types.type.name}</h6></Badge> 
                     )}
                 </div>
 
@@ -41,7 +41,7 @@ class PokemonDetail extends React.Component{
                                 <td>{stat.stat.name}</td>
                                
                                 <td><progress min="0" max="100" value={stat.base_stat}></progress></td>
-                                <td>{stat.base_stat}</td>
+                                <td>{stat.base_stat}%</td>
                             </tr>
                         )}
                     </tbody>
