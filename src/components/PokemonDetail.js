@@ -39,6 +39,8 @@ class PokemonDetail extends React.Component{
                         {this.state.data2.map(stat =>
                             <tr>
                                 <td>{stat.stat.name}</td>
+                               
+                                <td><progress min="0" max="100" value={stat.base_stat}></progress></td>
                                 <td>{stat.base_stat}</td>
                             </tr>
                         )}
