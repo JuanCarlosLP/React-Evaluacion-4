@@ -1,35 +1,49 @@
 import React from 'react';
+import {Table, Badge} from 'react-bootstrap'
 
 class PokemonDetail extends React.Component{
-
-    constructor() {
-        super();
+    constructor(props) {
+        super(props);
         this.state = {
-            pokemon: {}
+            data: [],
+            data2: []
         }
+    
+        this.getData();
     }
-
-    componentDidMount() {
+    
+    getData() {
         fetch(this.props.url)
-            .then(response => response.json())
-            .then(data => this.setState({pokemon: data}, () => {
-                this.state.pokemon.types.map(type => {
-                    console.log(type.type.name)
+            .then(response => {return response.json();})
+            .then(result => {this.setState({
+                    data: result.types,
+                    data2: result.stats
                 })
-                this.state.pokemon.stats.map(stat => {
-                    console.log(`${stat.stat.name} = ${stat.base_stat}`)
-                })
-            }))
-            .catch(error => {
-                console.log(error);
             })
+            .catch(error => {console.log(error)})
     }
     
     render() {
         return (
             <div className="card-container">
-                <h2>{this.props.name}</h2>
                 <img src={this.props.img} alt={this.props.name} />
+
+                {this.state.data.map(types =>
+                    <div>
+                        <Badge variant="primary">{types.type.name}</Badge>{' '}
+                    </div>
+                )}
+
+                <Table striped bordered hover variant="dark">
+                    <tbody>
+                        {this.state.data2.map(stat =>
+                            <tr>
+                                <td>{stat.stat.name}</td>
+                                <td>{stat.base_stat}</td>
+                            </tr>
+                        )}
+                    </tbody>
+                </Table>
             </div>
             )
     }
