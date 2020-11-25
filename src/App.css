@@ -8,6 +8,16 @@
  grid-template-columns: 1fr 1fr 1fr;
  column-gap: 2%;
  row-gap: 2%;
+ margin: 4rem;
+}
+
+.container-paginacion > .item {
+  width: 4rem;
+  background-color: #007bff;
+  cursor: pointer;
+  margin-bottom: 6rem;
+  border-radius: 50%;
+  margin-left: 1rem;
 }
 
 .modal-header{
