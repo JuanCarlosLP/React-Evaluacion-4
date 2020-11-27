@@ -29,16 +29,16 @@ class PokemonDetail extends React.Component{
                 <img src={this.props.img} alt={this.props.name} />
 
                 <div className="row justify-content-around mb-2">
-                    {this.state.data.map(types =>
-                     <Badge variant="primary"><h6>{types.type.name}</h6></Badge> 
+                    {this.state.data.map((types, index )=>
+                     <Badge key={index} variant="primary"><h6>{types.type.name}</h6></Badge> 
                     )}
                 </div>
 
                 <Table striped bordered hover variant="dark">
                     <tbody>
-                        {this.state.data2.map(stat =>
-                            <tr>
-                                <td>{stat.stat.name}</td>
+                        {this.state.data2.map((stat, index) =>
+                            <tr key={index}>
+                                <td key={index}>{stat.stat.name}</td>
                                
                                 <td><progress min="0" max="100" value={stat.base_stat}></progress></td>
                                 <td>{stat.base_stat}%</td>

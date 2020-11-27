@@ -11,7 +11,7 @@ function Pagination(props){
                 <div className="container-paginacion">
                 {
                     pokemonArray.map( (element, index) => {
-                        return <div className="item" onClick={() => props.fetchPageFn(index+1)}>{index + 1}</div>
+                        return <div key={index} className="item" onClick={() => props.fetchPageFn(index+1)}>{index + 1}</div>
                     })
                 }
             </div>
